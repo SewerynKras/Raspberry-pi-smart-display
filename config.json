@@ -1,0 +1,20 @@
+{
+    "weather_widget": true,
+    "assistant_widget": true,
+    "clock_widget": true,
+    "temperature_widget": true,
+    "pir_sensor": true,
+    "screen_relay": true,
+    "device_model_id": "DEVICE_MODEL_ID",
+    "city_name": "warsaw",
+    "pin": {
+        "SCREEN": 24,
+        "PIR": 23
+    },
+    "weather_font": "ArimaMadurai-Light",
+    "temperature_font": "ArimaMadurai-Light",
+    "clock_font": "ArimaMadurai-Light",
+    "assistant_font": "ArimaMadurai-Light",
+    "url": "http://192.168.8.101/thermometer",
+    "timeout": 60
+}
