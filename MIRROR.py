@@ -11,8 +11,6 @@ from widgets.clock_widget import ClockWidget
 from widgets.temperature_widget import TemperatureWidget
 from widgets.weather_widget import WeatherWidget
 
-
-
 class GUI(FloatLayout):
     def __init__(self):
         super(GUI, self).__init__()
@@ -71,7 +69,6 @@ class GUI(FloatLayout):
             self.temp_humi.size_hint = cfg['temperature_widget']['size']
             self.temp_humi.pos_hint = cfg['temperature_widget']['position']
             self.widgets.append(self.temp_humi)
-
 
         for widget in self.widgets:
             self.add_widget(widget)

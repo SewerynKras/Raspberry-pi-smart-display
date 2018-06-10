@@ -1,4 +1,3 @@
-
 # Raspberry pi smart mirror
 
 ## Widgets
@@ -13,7 +12,7 @@
 
 ### Temperature widget
 
-- Displays temperature and humidity from my ethernet arduino thermometer ([available here](github.com/somethingsomething))
+- Displays temperature and humidity from my ethernet arduino thermometer ([available here](https://github.com/SewerynKras/Arduino-ethernet-thermometer))
 
 ### Assistant widget
 
