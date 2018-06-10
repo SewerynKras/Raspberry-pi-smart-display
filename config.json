@@ -1,20 +1,62 @@
 {
-    "weather_widget": true,
-    "assistant_widget": true,
-    "clock_widget": true,
-    "temperature_widget": true,
-    "pir_sensor": true,
-    "screen_relay": true,
-    "device_model_id": "DEVICE_MODEL_ID",
-    "city_name": "warsaw",
-    "pin": {
-        "SCREEN": 24,
-        "PIR": 23
+    "clock_widget": {
+        "include": true,
+        "position": {
+            "x": 0,
+            "y": 0
+        },
+        "size": [
+            0.20,
+            0.20
+        ],
+        "font": "ArimaMadurai-Light"
     },
-    "weather_font": "ArimaMadurai-Light",
-    "temperature_font": "ArimaMadurai-Light",
-    "clock_font": "ArimaMadurai-Light",
-    "assistant_font": "ArimaMadurai-Light",
-    "url": "http://192.168.8.101/thermometer",
-    "timeout": 60
+    "weather_widget": {
+        "include": true,
+        "position": {
+            "x": 0,
+            "y": 0.25
+        },
+        "size": [
+            0.30,
+            0.10
+        ],
+        "font": "ArimaMadurai-Light",
+        "city_name": "warsaw"
+    },
+    "assistant_widget": {
+        "include": true,
+        "position": {
+            "x": 0.55,
+            "y": 0
+        },
+        "size": [
+            0.45,
+            0.8
+        ],
+        "font": "ArimaMadurai-Light",
+        "device_model_id": "DEVICE_MODEL_ID"
+    },
+    "temperature_widget": {
+        "include": true,
+        "position": {
+            "x": 0.24,
+            "y": 0
+        },
+        "size": [
+            0.2,
+            0.3
+        ],
+        "font": "ArimaMadurai-Light",
+        "url": "http://192.168.8.101/thermometer"
+    },
+    "GPIO": {
+        "pir_sensor": true,
+        "screen_relay": true,
+        "pin": {
+            "PIR": 23,
+            "SCREEN": 24
+        },
+        "timeout": 60
+    }
 }
