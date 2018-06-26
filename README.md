@@ -47,5 +47,6 @@ USB microphone (or 3.5 mm microphone with an USB sound card)
 
 BCM pins can be configured in the 'config.json' file
 
-# Example schematic
+## Example schematic
+
 ![Raspberry pi schematic](raspberrypi_schematic.jpg)

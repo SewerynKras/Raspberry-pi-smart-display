@@ -11,6 +11,7 @@ from widgets.clock_widget import ClockWidget
 from widgets.temperature_widget import TemperatureWidget
 from widgets.weather_widget import WeatherWidget
 
+
 class GUI(FloatLayout):
     def __init__(self):
         super(GUI, self).__init__()
@@ -86,7 +87,6 @@ class GUI(FloatLayout):
                     self.remove_widget(widget)
 
         else:
-
             self.timeout = 0
             if not self.children:
                 for widget in self.widgets:

@@ -13,8 +13,6 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.stacklayout import StackLayout
 from kivy.uix.image import Image
 from kivy.clock import Clock, mainthread
-from kivy.app import App
-
 
 class AssistantBlock(BoxLayout):
 
@@ -102,20 +100,6 @@ class AssistantWidget(StackLayout):
             self.last_block = True
             Clock.unschedule(self.check_timer)
 
-    def process_device_actions(self, event, device_id):
-        if 'inputs' in event.args:
-            for i in event.args['inputs']:
-                if i['intent'] == 'action.devices.EXECUTE':
-                    for c in i['payload']['commands']:
-                        for device in c['devices']:
-                            if device['id'] == device_id:
-                                if 'execution' in c:
-                                    for e in c['execution']:
-                                        if 'params' in e:
-                                            yield e['command'], e['params']
-                                        else:
-                                            yield e['command'], None
-
     @mainthread
     def process_event(self, event, device_id):
         if event.type == EventType.ON_CONVERSATION_TURN_STARTED \
@@ -126,17 +110,6 @@ class AssistantWidget(StackLayout):
 
         if event.type == EventType.ON_RENDER_RESPONSE:
             self.add_block(text=event.args['text'], type='ASSISTANT')
-        # TODO: Add code that does something here
-        if event.type == EventType.ON_DEVICE_ACTION:
-            print(event)
-            for command, params \
-                    in self.process_device_actions(event, device_id):
-                print('Do command', command, 'with params', str(params))
-            if command == "action.devices.commands.OnOff":
-                if params['on']:
-                    print("Turn on!")
-                else:
-                    print("Turn off!")
 
     def activate(self, dt):
         threading.Thread(
@@ -154,12 +127,3 @@ class AssistantWidget(StackLayout):
             events = assistant.start()
             for event in events:
                 self.process_event(event, assistant.device_id)
-
-
-if __name__ == "__main__":
-    class myApp(App):
-        def build(self):
-            ly = AssistantWidget("mirror-LED")
-            return ly
-    a = myApp()
-    a.run()
