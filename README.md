@@ -1,4 +1,4 @@
-# Raspberry pi smart mirror
+# Raspberry pi smart display
 
 ## Widgets
 
